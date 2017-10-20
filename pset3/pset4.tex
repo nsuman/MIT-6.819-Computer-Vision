@@ -1,0 +1,38 @@
+% A template for problem sets 
+\documentclass[12pt,letterpaper]{article} 
+\usepackage{listings}
+\usepackage{fancyhdr} 
+\usepackage{pdfpages}
+
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage[margin=1in,top=1.5in,headheight=3em]{geometry} 
+\pagestyle{fancy}
+\pagenumbering{roman}
+
+\lhead{
+	Advances in Computer Vision \\
+	Problem Set 4
+}
+\rhead{
+	Suman Nepal \\
+	\today
+}
+
+\begin{document}
+	\section*{Problem  1 }
+	(a) \newline
+	Let X be a N- dimensional vector and W is a  k-dimensional kernel. We want to convolve X with K and get a output Y.
+	
+	\[X_{out}  = X_{in} \bigodot W  \]
+	In the forward pass, the i-th pixel of the output vector is given by the formula
+	\[
+	X_{out}^{i} = \sum_{m = 0}^{k-1} X_{in}^{i -  \floor{\frac{k-1}{2}}+m}W^{m}
+	\]
+	(b) \newline
+	For the back propagation, we will utilize the chain rule \newline
+	\[
+	\frac{\partial C}{\partial x_{in}} =  \frac{\partial C} {\partial x_{out}} \frac{\partial x_{out}}{\partial x_{in}}
+	\]
+\end{document}
